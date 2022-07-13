@@ -8,7 +8,8 @@ import io from "socket.io-client";
 import { useState } from 'react';
 
 // サーバー側とクライアント側の両方で、第2引数にpathを同値で設定する必要がある。
-const socket = io("https://study-realtime-chatapp-server.vercel.app"
+// const socket = io("https://study-realtime-chatapp-server.vercel.app"
+const socket = io("http://localhost:3001"
   // , {
   // path: "/",
   // withCredentials: true
