@@ -7,7 +7,9 @@ import styles from '../styles/Home.module.css'
 import io from "socket.io-client";
 import { useState } from 'react';
 
-const socket = io("https://study-realtime-chatapp-server.vercel.app");
+const socket = io("https://study-realtime-chatapp-server.vercel.app", {
+  path: "/socket/"
+});
 
 /*
 クライアント側のブラウザのConsoleに「〜has been blocked by CORS policy:〜」というエラーが表示される。
@@ -31,6 +33,11 @@ const io = Server(server);
 }
 を渡してあげれば良い。
 アクセスを許可するoriginが複数あるときは、配列にしてもOK。
+
+vercelにデプロイしたときは、上記設定ではうまくCORSのorigin設定が反映されなかった。
+vercel.jsonにheadersを追加したところ、CORSのエラーは消えた。
+ただ、https://study-realtime-chatapp-server.vercel.app/socket.io/?EIO=4&transport=pollingが
+404エラーを返してくる。。。
 */
 
 export default function Home() {
