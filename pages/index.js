@@ -7,7 +7,7 @@ import styles from '../styles/Home.module.css'
 import io from "socket.io-client";
 import { useState } from 'react';
 
-const socket = io("https://study-realtime-chatapp-server.vercel.app/");
+const socket = io("https://study-realtime-chatapp-server.vercel.app");
 
 /*
 クライアント側のブラウザのConsoleに「〜has been blocked by CORS policy:〜」というエラーが表示される。
