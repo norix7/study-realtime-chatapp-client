@@ -8,10 +8,13 @@ import io from "socket.io-client";
 import { useState } from 'react';
 
 // サーバー側とクライアント側の両方で、第2引数にpathを同値で設定する必要がある。
-const socket = io("https://study-realtime-chatapp-server.vercel.app", {
-  // path: "/socket.io/",
+const socket = io("https://study-realtime-chatapp-server.vercel.app"
+  , {
+  path: "/",
   // withCredentials: true
-});
+  }
+);
+console.log(socket);
 
 /*
 クライアント側のブラウザのConsoleに「〜has been blocked by CORS policy:〜」というエラーが表示される。
